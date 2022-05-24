@@ -1,0 +1,22 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/projects.css' %}">
+{% endblock head %}
+
+{% block main %}
+<div class="title">
+    <h1>Projects</h1>
+</div>
+
+<div class="projects">
+    {% for p in projects %}
+    <a href="{{p.trailer_url}}" target="_blank">
+        <div class="project">
+            <h2>{{p.name}}</h2>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+from django.shortcuts import render
+from .models import Project, Subject, Person
+import datetime
+
+
+def home_view(request):
+    return render(request, 'portfolio/home.html')
+
+
+def about_view(request):
+    subjects = Subject.objects.all()
+
+    subjects = sorted(subjects, key=lambda x: (x.year, x.semester, x.name))
+
+    return render(request, 'portfolio/about.html', {'subjects': subjects})
+
+
+def projects_view(request):
+    projects = Project.objects.all()
+
+    projects = sorted(projects, key=lambda p: (p.start_date, p.end_date))
+
+    return render(request, 'portfolio/projects.html', {'projects': projects})
+
+
+def web_programming_view(request):
+    return render(request, 'portfolio/web-programming.html')
+
+
+def blog_view(request):
+    return render(request, 'portfolio/blog.html')
+
+
+def about_website_view(request):
+    return render(request, 'portfolio/about-website.html')
+
+
+def contact_view(request):
+    return render(request, 'portfolio/contact.html')

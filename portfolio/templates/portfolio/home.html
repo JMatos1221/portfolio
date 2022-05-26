@@ -1,8 +1,15 @@
 {% extends 'portfolio/layout.html' %}
 
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/home.css' %}">
+{% endblock head %}
+
 {% block main %}
 
-{% load static %}
-<img src="{% static 'portfolio/images/unity.png' %}">
+<div class="hero-image">
+    {% load static %}
+    <img src="{% static 'portfolio/images/wordcloud.jpg' %}">
+</div>
 
 {% endblock %}

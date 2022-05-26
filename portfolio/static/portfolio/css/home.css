@@ -1,0 +1,13 @@
+.hero-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: calc(85vh - 8em);
+}
+
+.hero-image img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

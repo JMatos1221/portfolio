@@ -18,7 +18,7 @@ def about_view(request):
 def projects_view(request):
     projects = Project.objects.all()
 
-    projects = sorted(projects, key=lambda p: (p.start_date, p.end_date))
+    projects = sorted(projects, key=lambda p: (p.year, p.name))
 
     return render(request, 'portfolio/projects.html', {'projects': projects})
 

@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 
 class Subject(models.Model):
@@ -23,10 +22,10 @@ class Person(models.Model):
 
 
 class Project(models.Model):
-    name = models.CharField(max_length=50)
-    trailer_url = models.CharField(max_length=100)
-    start_date = models.DateField(default=timezone.now())
-    end_date = models.DateField(default=timezone.now())
+    name = models.CharField(max_length=50, default='Name')
+    description = models.CharField(max_length=500, default='Description')
+    year = models.IntegerField(default=2019)
+    trailer_url = models.URLField(default='http://youtube.com/')
 
     def __str__(self):
         return self.name

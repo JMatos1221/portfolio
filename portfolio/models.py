@@ -29,3 +29,11 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=50, default='Name')
+    link = models.URLField()
+
+    def __str__(self):
+        return self.name

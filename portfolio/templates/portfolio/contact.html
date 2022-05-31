@@ -1,5 +1,24 @@
 {% extends 'portfolio/layout.html' %}
 
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/contact.css' %}">
+{% endblock head %}
+
 {% block main %}
+
+<div class="contacts">
+
+    {% for c in contacts %}
+
+    <a href="{{c.link}}" target="_blank">
+        <div class="contact">
+            <h2>{{c.name}}</h2>
+        </div>
+    </a>
+
+    {% endfor %}
+
+</div>
 
 {% endblock %}

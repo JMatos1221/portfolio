@@ -24,16 +24,17 @@
   overflow: hidden;
 }
 
+.projects a {
+  color: gray;
+  text-decoration: none;
+}
+
 .project h2,
 .project p {
   padding-bottom: 16px;
 }
 
 .project h4 {
+  color: black;
   margin-top: auto;
-}
-
-.projects a {
-  color: gray;
-  text-decoration: none;
 }

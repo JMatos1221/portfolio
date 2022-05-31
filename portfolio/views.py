@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Project, Subject, Person
+from .models import Contact, Project, Subject, Person
 import datetime
 
 
@@ -36,4 +36,8 @@ def about_website_view(request):
 
 
 def contact_view(request):
-    return render(request, 'portfolio/contact.html')
+    contacts = Contact.objects.all()
+
+    contacts = sorted(contacts, key=lambda c: c.name)
+
+    return render(request, 'portfolio/contact.html', {'contacts': contacts})

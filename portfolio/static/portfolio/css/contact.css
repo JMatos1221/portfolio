@@ -1,0 +1,28 @@
+.contacts {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 100px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 0px 15px gray;
+}
+
+.contact h2 {
+  color: gray;
+}
+.contacts a {
+  text-decoration: none;
+}

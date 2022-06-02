@@ -1,5 +1,25 @@
 {% extends 'portfolio/layout.html' %}
 
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/web-programming.css' %}">
+{% endblock head %}
+
 {% block main %}
+
+<div class="title">
+    <h1>Web Programming Technologies</h1>
+</div>
+
+<div class="technologies">
+
+    {% for t in technologies %}
+
+    <div class="technology">
+        <p>{{t.name}}</p>
+    </div>
+
+    {% endfor %}
+</div>
 
 {% endblock %}

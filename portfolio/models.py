@@ -31,6 +31,12 @@ class Project(models.Model):
         return self.name
 
 
+class WebTechnology(models.Model):
+    name = models.CharField(max_length=50, default='HTML')
+    description = models.CharField(max_length=500, default='Description')
+    link = models.URLField(default='https://wikipedia.org')
+
+
 class Contact(models.Model):
     name = models.CharField(max_length=50, default='Name')
     link = models.URLField()

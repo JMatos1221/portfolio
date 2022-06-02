@@ -14,10 +14,12 @@
 <div class="technologies">
 
     {% for t in technologies %}
-
-    <div class="technology">
-        <p>{{t.name}}</p>
-    </div>
+    <a href="{{t.link}}">
+        <div class="technology">
+            <h4>{{t.name}}</h4>
+            <p>{{t.description}}</p>
+        </div>
+    </a>
 
     {% endfor %}
 </div>

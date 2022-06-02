@@ -68,3 +68,8 @@ li {
 ul:first-child > li {
   padding: 0px;
 }
+
+.title {
+  text-align: center;
+  margin-bottom: 32px;
+}

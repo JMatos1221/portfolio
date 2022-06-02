@@ -36,6 +36,9 @@ class WebTechnology(models.Model):
     description = models.CharField(max_length=500, default='Description')
     link = models.URLField(default='https://wikipedia.org')
 
+    def __str__(self):
+        return self.name
+
 
 class Contact(models.Model):
     name = models.CharField(max_length=50, default='Name')

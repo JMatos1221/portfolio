@@ -49,6 +49,15 @@ class Laboratory(models.Model):
         return self.name
 
 
+class New(models.Model):
+    name = models.CharField(max_length=50, default='New')
+    description = models.CharField(max_length=500, default='Description')
+    link = models.URLField()
+
+    def __str__(self):
+        return self.name
+
+
 class Contact(models.Model):
     name = models.CharField(max_length=50, default='Name')
     link = models.URLField()

@@ -1,6 +1,10 @@
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="author" content="João Matos">
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}">
+    <script type="text/javascript" src="http://livejs.com/live.js"></script>
     <title>João Matos - Portfolio</title>
 
     {% block head %}
@@ -16,7 +20,6 @@
             <a href="{% url 'portfolio:projects' %}">Projects</a>
             <a href="{% url 'portfolio:web-programming' %}">Web Programming</a>
             <a href="{% url 'portfolio:blog' %}">Blog</a>
-            <a href="{% url 'portfolio:about-website' %}">About Website</a>
             <a href="{% url 'portfolio:contact' %}">Contact</a>
         </nav>
     </header>

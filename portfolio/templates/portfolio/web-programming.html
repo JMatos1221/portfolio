@@ -1,48 +1,74 @@
-{% extends 'portfolio/layout.html' %}
-
-{% block head %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'portfolio/css/web-programming.css' %}">
-{% endblock head %}
-
-{% block main %}
-
-{% if technologies|length > 0 %}
+{% extends 'portfolio/layout.html' %} {% block head %} {% load static %}
+<link
+  rel="stylesheet"
+  href="{% static 'portfolio/css/web-programming.css' %}"
+/>
+{% endblock head %} {% block main %} {% if technologies|length > 0 %}
 <div class="title">
-    <h1>Web Programming Technologies</h1>
+  <h1>Web Programming Technologies</h1>
 </div>
 {% endif %}
 
 <div class="technologies">
+  {% for t in technologies %}
+  <a href="{{t.link}}">
+    <div class="technology">
+      <h4>{{t.name}}</h4>
+      <p>{{t.description}}</p>
+    </div>
+  </a>
 
-    {% for t in technologies %}
-    <a href="{{t.link}}">
-        <div class="technology">
-            <h4>{{t.name}}</h4>
-            <p>{{t.description}}</p>
-        </div>
-    </a>
-
-    {% endfor %}
+  {% endfor %}
 </div>
 
 {% if laboratories|length > 0 %}
 <div class="title">
-    <h1>Laboratories</h1>
+  <h1>Laboratories</h1>
 </div>
 {% endif %}
 
 <div class="laboratories">
+  {% for l in laboratories %}
+  <a href="{{l.link}}">
+    <div class="laboratory">
+      <h4>{{l.name}}</h4>
+      <p>{{l.description}}</p>
+    </div>
+  </a>
 
-    {% for l in laboratories %}
-    <a href="{{l.link}}">
-        <div class="laboratory">
-            <h4>{{l.name}}</h4>
-            <p>{{l.description}}</p>
-        </div>
-    </a>
-
-    {% endfor %}
+  {% endfor %}
 </div>
+
+{% if news|length > 0 %}
+<div class="title">
+  <h1>News</h1>
+</div>
+{% endif %}
+
+<div class="news">
+  {% for n in news %}
+  <a href="{{n.link}}">
+    <div class="new">
+      <h4>{{n.name}}</h4>
+      <p>{{n.description}}</p>
+    </div>
+  </a>
+
+  {% endfor %}
+</div>
+
+<div class="about-website">
+  <img src="" alt="" />
+
+  <div>
+    <!-- estrutura do site  -->
+  </div>
+
+  <div><!-- padrões usados   --></div>
+</div>
+
+<div class="examples-tecniques"></div>
+
+<div class="quizz"></div>
 
 {% endblock %}

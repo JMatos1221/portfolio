@@ -1,8 +1,13 @@
+@font-face {
+  font-family: roboto-mono;
+  src: url("../fonts/RobotoMono-Regular.ttf");
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: roboto-mono, sans-serif;
 }
 
 body {
@@ -54,11 +59,11 @@ main {
 }
 
 footer {
-  height: 5vh;
   display: flex;
-  justify-content: flex-end;
-  padding: 0 2vw;
+  justify-content: center;
   align-items: center;
+  height: 5vh;
+  padding: 0 2vw;
   background: grey;
   font-weight: bold;
 }
@@ -79,5 +84,12 @@ ul:first-child > li {
 
 .title {
   text-align: center;
+}
+
+.title:first-of-type {
   margin-bottom: 32px;
+}
+
+.title:not(:first-of-type) {
+  margin: 64px 0px 32px 0px;
 }

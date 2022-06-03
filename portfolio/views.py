@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Contact, Laboratory, Project, Subject, Person, WebTechnology
+from .models import Contact, Laboratory, New, Project, Subject, Person, WebTechnology
 import datetime
 
 
@@ -32,7 +32,18 @@ def web_programming_view(request):
 
     laboratories = sorted(laboratories, key=lambda t: t.name)
 
-    return render(request, 'portfolio/web-programming.html', {'technologies': technologies, 'laboratories': laboratories})
+    news = New.objects.all()
+
+    news = sorted(news, key=lambda n: n.name)
+
+    context = {
+        'technologies': technologies,
+        'laboratories': laboratories,
+        'news': news
+
+    }
+
+    return render(request, 'portfolio/web-programming.html', context)
 
 
 def blog_view(request):

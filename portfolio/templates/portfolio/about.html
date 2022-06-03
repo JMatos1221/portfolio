@@ -1,25 +1,35 @@
-{% extends 'portfolio/layout.html' %}
-
-{% block head %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'portfolio/css/about.css' %}">
-{% endblock head %}
-
-{% block main %}
+{% extends 'portfolio/layout.html' %} {% block head %} {% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/about.css' %}" />
+{% endblock head %} {% block main %}
 <div class="title">
-    <h1>Bachelor</h1>
-    <h2>Video and Computer Games Development</h2>
+  <h1>About me</h1>
 </div>
 
-<br>
+<div class="about-me">
+  <p>Hi, I'm João and I'm studying videogames development.
+    I'm most familiar with Unity and C# programming, but also with Python, HTML, and CSS. 
+    Looking forward to gain experience as a programmer and game developer.
+
+  </br>
+    
+    Currently in my last year of videogames development bachelor, developing a project called Alter, a first-person puzzle game where you play as Layla, a girl with a polymorphic body.
+    I have an interest in serious games, as they not only offer entertainment but also have other purposes such as helping people with phobias or traumas.</p>
+</div>
+
+<div class="title">
+  <h1>Bachelor</h1>
+  <h2>Video and Computer Games Development</h2>
+</div>
+
+<br />
 
 <div class="subjects">
-    {% for s in subjects %}
-    <div class="subject">
-        <h4>Year {{s.year}} | Semester {{s.semester}} | ECTS {{s.ects}}</h4>
-        <h2>{{s.name}}</h2>
-        <p>{{s.description}}</p>
-    </div>
-    {% endfor %}
+  {% for s in subjects %}
+  <div class="subject">
+    <h4>Year {{s.year}} | Semester {{s.semester}} | ECTS {{s.ects}}</h4>
+    <h2>{{s.name}}</h2>
+    <p>{{s.description}}</p>
+  </div>
+  {% endfor %}
 </div>
 {% endblock main %}

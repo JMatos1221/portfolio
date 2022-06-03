@@ -6,10 +6,16 @@
 {% endblock head %}
 
 {% block main %}
+
+{% if projects|length > 0 %}
 <div class="title">
     <h1>Projects</h1>
 </div>
-
+{% else %}
+<div class="title">
+    <h1>No projects added yet</h1>
+</div>
+{% endif %}
 <div class="projects">
     {% for p in projects %}
     <a href="{{p.trailer_url}}" target="_blank">

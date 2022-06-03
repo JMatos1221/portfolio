@@ -1,4 +1,5 @@
-.technologies {
+.technologies,
+.laboratories {
   display: flex;
   align-content: center;
   justify-content: space-around;
@@ -6,24 +7,24 @@
   gap: 32px;
 }
 
-.technology {
+.technology,
+.laboratory {
   padding: 16px;
   width: 300px;
   height: 100%;
   background: white;
   border-radius: 16px;
   box-shadow: 0px 0px 15px gray;
-}
-
-.technology {
   color: gray;
 }
 
-.technology h4 {
+.technology h4,
+.laboratory h4 {
   color: black;
   padding-bottom: 16px;
 }
 
-.technologies a {
+.technologies a,
+.laboratory a {
   text-decoration: none;
 }

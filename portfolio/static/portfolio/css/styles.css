@@ -26,7 +26,7 @@ header div {
 }
 
 header div a {
-  color: whitesmoke;
+  color: lightgray;
   text-decoration: none;
 }
 
@@ -34,13 +34,15 @@ header nav {
   display: flex;
   justify-content: flex-end;
   margin-right: 1em;
+  gap: 4px;
 }
 
 nav a {
   padding: 0.2em 1em;
   text-decoration: none;
   font-size: 1rem;
-  color: whitesmoke;
+  font-weight: bold;
+  color: gray;
   background: lightgray;
   border-radius: 16px;
 }
@@ -61,10 +63,16 @@ footer {
   font-weight: bold;
 }
 
+footer a {
+  text-decoration: underline;
+  color: black;
+}
+
 li {
   list-style: none;
   padding: 4px 16px;
 }
+
 ul:first-child > li {
   padding: 0px;
 }

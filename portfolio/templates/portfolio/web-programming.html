@@ -7,9 +7,11 @@
 
 {% block main %}
 
+{% if technologies|length > 0 %}
 <div class="title">
     <h1>Web Programming Technologies</h1>
 </div>
+{% endif %}
 
 <div class="technologies">
 
@@ -18,6 +20,25 @@
         <div class="technology">
             <h4>{{t.name}}</h4>
             <p>{{t.description}}</p>
+        </div>
+    </a>
+
+    {% endfor %}
+</div>
+
+{% if laboratories|length > 0 %}
+<div class="title">
+    <h1>Laboratories</h1>
+</div>
+{% endif %}
+
+<div class="laboratories">
+
+    {% for l in laboratories %}
+    <a href="{{l.link}}">
+        <div class="laboratory">
+            <h4>{{l.name}}</h4>
+            <p>{{l.description}}</p>
         </div>
     </a>
 

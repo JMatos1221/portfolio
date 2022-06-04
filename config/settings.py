@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'portfolio',
     'whitenoise.runserver_nostatic',
-    'django_cleanup',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

@@ -4,7 +4,9 @@
     <meta name="author" content="João Matos">
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}">
+    {% if debug %}
     <script type="text/javascript" src="http://livejs.com/live.js"></script>
+    {% endif %}
     <title>João Matos | Portfolio</title>
 
     {% block head %}

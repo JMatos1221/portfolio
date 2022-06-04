@@ -8,6 +8,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: roboto-mono, sans-serif;
+  word-wrap: break-word;
 }
 
 body {

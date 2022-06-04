@@ -1,4 +1,3 @@
-import os
 from django.db import models
 
 
@@ -27,7 +26,8 @@ class Project(models.Model):
     description = models.CharField(max_length=500, default='Description')
     year = models.IntegerField(default=2019)
     trailer_url = models.URLField(default='http://youtube.com/')
-    thumbnail = models.ImageField(upload_to="images/projects", blank=True)
+    thumbnail = models.ImageField(
+        upload_to="images/projects", default="images/projects/default.png")
 
     def __str__(self):
         return self.name

@@ -9,21 +9,21 @@
   box-sizing: border-box;
   font-family: roboto-mono, sans-serif;
   word-wrap: break-word;
+  scroll-behavior: smooth;
 }
 
 body {
   display: flex;
   flex-direction: column;
+  background-color: lightgrey;
 }
 
 header {
-  height: 10vh;
-  background: gray;
-  top: 0;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 10vh;
+  background: gray;
 }
 
 header div {

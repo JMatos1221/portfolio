@@ -1,5 +1,15 @@
-{% extends 'portfolio/layout.html' %}
+{% extends 'portfolio/layout.html' %} {% block head %} {% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/blog.css' %}" />
+{% endblock head %} {% block main %} {% for p in posts%}
 
-{% block main %}
+<p>{{p.description}}</p>
 
+{% endfor %}
+
+<div class="post-form">
+  <input type="text" name="author" />
+  <input type="text" name="title" />
+  <textarea name="description" cols="30" rows="10"></textarea>
+  <button type="submit">Submit</button>
+</div>
 {% endblock %}

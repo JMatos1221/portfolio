@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from .models import Contact, Laboratory, New, Project, Subject, Person, WebTechnology
-import datetime
+from .models import Contact, Laboratory, New, Post, Project, Subject, WebTechnology
 
 
 def home_view(request):
@@ -47,7 +46,11 @@ def web_programming_view(request):
 
 
 def blog_view(request):
-    return render(request, 'portfolio/blog.html')
+    posts = Post.objects.all()
+
+    posts = sorted(posts, key=lambda p: p.date, reverse=True)
+
+    return render(request, 'portfolio/blog.html', {'posts': posts})
 
 
 def about_website_view(request):

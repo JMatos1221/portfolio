@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Subject(models.Model):
@@ -59,6 +60,16 @@ class New(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Post(models.Model):
+    author = models.CharField(max_length=50, default='Author')
+    date = models.DateTimeField(default=timezone.now)
+    title = models.CharField(max_length=50, default='Title')
+    description = models.CharField(max_length=500, default='Description')
+
+    def __str__(self):
+        return f"{self.date} | {self.author} | {self.description}"
 
 
 class Contact(models.Model):

@@ -6,14 +6,18 @@
 </div>
 
 <div class="about-me">
-  <p>Hi, I'm João and I'm studying videogames development.
-    I'm most familiar with Unity and C# programming, but also with Python, HTML, and CSS. 
-    Looking forward to gain experience as a programmer and game developer.
-
-  </br>
-    
-    Currently in my last year of videogames development bachelor, developing a project called Alter, a first-person puzzle game where you play as Layla, a girl with a polymorphic body.
-    I have an interest in serious games, as they not only offer entertainment but also have other purposes such as helping people with phobias or traumas.</p>
+  <p>
+    Hi, I'm João and I'm studying videogames development. I'm most familiar with
+    Unity and C# programming, but also with Python, HTML, and CSS. Looking
+    forward to gain experience as a programmer and game developer.
+    <br />
+    <br />
+    Currently in my last year of videogames development bachelor, developing a
+    project called Alter, a first-person puzzle game where you play as Layla, a
+    girl with a polymorphic body. I have an interest in serious games, as they
+    not only offer entertainment but also have other purposes such as helping
+    people with phobias or traumas.
+  </p>
 </div>
 
 <div class="title">
@@ -25,11 +29,14 @@
 
 <div class="subjects">
   {% for s in subjects %}
-  <div class="subject">
-    <h4>Year {{s.year}} | Semester {{s.semester}} | ECTS {{s.ects}}</h4>
-    <h2>{{s.name}}</h2>
-    <p>{{s.description}}</p>
-  </div>
+  <a href="{{s.link}}">
+    <div class="subject">
+      <h4>Year {{s.year}} | Semester {{s.semester}} | ECTS {{s.ects}}</h4>
+      <h2>{{s.name}}</h2>
+      <p>{{s.description}}</p>
+      <h4>Lective Year {{s.lective_year}}</h4>
+    </div>
+  </a>
   {% endfor %}
 </div>
 {% endblock main %}

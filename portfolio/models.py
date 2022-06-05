@@ -8,6 +8,7 @@ class Subject(models.Model):
     ects = models.IntegerField(default=4)
     lective_year = models.IntegerField(default=2019)
     description = models.CharField(max_length=500, default='Description')
+    link = models.URLField(default='https://www.ulusofona.pt/')
 
     def __str__(self):
         return f"{self.name} Y{self.year}S{self.semester}"

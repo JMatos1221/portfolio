@@ -20,6 +20,7 @@ whitenoise = "==5.1.0"
 Django = "==4.0.4"
 Pillow = "==9.1.1"
 django-cleanup = "*"
+django-cloudinary-storage = "*"
 
 [dev-packages]
 

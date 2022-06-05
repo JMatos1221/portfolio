@@ -27,7 +27,7 @@ class Project(models.Model):
     year = models.IntegerField(default=2019)
     trailer_url = models.URLField(default='http://youtube.com/')
     thumbnail = models.ImageField(
-        upload_to="images/projects", default="images/projects/default.png")
+        upload_to="projects/", default="projects/default.png")
 
     def __str__(self):
         return self.name

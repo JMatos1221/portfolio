@@ -1,33 +1,28 @@
-{% extends 'portfolio/layout.html' %}
-
-{% block head %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'portfolio/css/projects.css' %}">
-{% endblock head %}
-
-{% block main %}
-
-{% if projects|length > 0 %}
+{% extends 'portfolio/layout.html' %} {% block head %} {% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/projects.css' %}" />
+{% endblock head %} {% block main %} {% if projects|length > 0 %}
 <div class="title">
-    <h1>Projects</h1>
+  <h1>Projects</h1>
 </div>
 {% else %}
 <div class="title">
-    <h1>No projects found :(</h1>
+  <h1>No projects found :(</h1>
 </div>
 {% endif %}
 <div class="projects">
-    {% for p in projects %}
-    <a href="{{p.trailer_url}}" target="_blank">
-        <div class="project">
-            <h2>{{p.name}}</h2>
-            <p>{{p.description}}</p>
-            <img src="{{p.thumbnail.url}}">
-            <h4>{{p.year}}</h4>
-        </div>
-    </a>
-    {% endfor %}
+  {% for p in projects %}
+  <a href="{{p.trailer_url}}" target="_blank">
+    <div class="project">
+      <div
+        class="project-background"
+        style="background-image:url({{p.thumbnail.url}})"
+      ></div>
+      <h2>{{p.name}}</h2>
+      <p>{{p.description}}</p>
+      <h4>{{p.year}}</h4>
+    </div>
+  </a>
+  {% endfor %}
 </div>
-
 
 {% endblock %}

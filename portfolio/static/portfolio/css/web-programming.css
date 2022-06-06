@@ -1,4 +1,6 @@
 .technologies,
+.used-technologies,
+.used-patterns,
 .laboratories {
   display: flex;
   align-content: center;
@@ -20,6 +22,8 @@
 
 .technology,
 .laboratory,
+.used-technology,
+.pattern,
 .new {
   padding: 16px;
   width: 300px;
@@ -48,6 +52,16 @@
   text-decoration: none;
 }
 
+.used-technology,
+.pattern {
+  text-align: center;
+}
+
+.pattern,
+.used-technology {
+  color: black;
+}
+
 .new {
   width: 100%;
   text-align: center;
@@ -63,4 +77,19 @@
 
 .news a {
   text-decoration: none;
+}
+
+.diagram {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.diagram img {
+  width: inherit;
+  height: inherit;
+  object-fit: contain;
 }

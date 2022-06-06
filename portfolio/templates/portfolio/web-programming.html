@@ -57,18 +57,46 @@
   {% endfor %}
 </div>
 
-<div class="about-website">
-  <img src="" alt="" />
-
-  <div>
-    <!-- estrutura do site  -->
-  </div>
-
-  <div><!-- padrões usados   --></div>
+<div class="title">
+  <h1>DER Diagram</h1>
 </div>
 
-<div class="examples-tecniques"></div>
+<div class="diagram">
+  {% load static %}
+  <img src="{% static 'portfolio/images/DER_Diagram.png' %}" />
+</div>
 
-<div class="quizz"></div>
+<div class="title">
+  <h1>Used Technologies</h1>
+</div>
+
+<div class="used-technologies">
+  <div class="used-technology">
+    <h4>HTML</h4>
+  </div>
+  <div class="used-technology">
+    <h4>CSS</h4>
+  </div>
+  <div class="used-technology">
+    <h4>Django</h4>
+  </div>
+  <div class="used-technology">
+    <h4>JavaScript</h4>
+  </div>
+</div>
+
+<div class="title">
+  <h1>Used Patterns</h1>
+</div>
+
+<div class="used-patterns">
+  <div class="pattern">
+    <h4>MTV</h4>
+  </div>
+
+  <div class="pattern">
+    <h4>Single Responsibility</h4>
+  </div>
+</div>
 
 {% endblock %}

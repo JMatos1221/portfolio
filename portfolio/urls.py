@@ -5,8 +5,7 @@ from . import views
 app_name = 'pw'
 
 urlpatterns = [
-    path('', views.home_view),
-    path('home', views.home_view, name='home'),
+    path('', views.home_view, name='home'),
     path('about', views.about_view, name='about'),
     path('projects', views.projects_view, name='projects'),
     path('web-programming', views.web_programming_view, name='web-programming'),

@@ -8,7 +8,7 @@ class Subject(models.Model):
     semester = models.IntegerField(default=1)
     ects = models.IntegerField(default=4)
     lective_year = models.IntegerField(default=2019)
-    description = models.CharField(max_length=500, default='Description')
+    description = models.TextField(max_length=500, default='Description')
     link = models.URLField(default='https://www.ulusofona.pt/')
 
     def __str__(self):
@@ -25,7 +25,7 @@ class Person(models.Model):
 
 class Project(models.Model):
     name = models.CharField(max_length=50, default='Name')
-    description = models.CharField(max_length=500, default='Description')
+    description = models.TextField(max_length=500, default='Description')
     year = models.IntegerField(default=2019)
     trailer_url = models.URLField(default='http://youtube.com/')
     thumbnail = models.ImageField(
@@ -37,7 +37,7 @@ class Project(models.Model):
 
 class WebTechnology(models.Model):
     name = models.CharField(max_length=50, default='HTML')
-    description = models.CharField(max_length=500, default='Description')
+    description = models.TextField(max_length=500, default='Description')
     link = models.URLField(default='https://wikipedia.org')
 
     def __str__(self):
@@ -46,7 +46,7 @@ class WebTechnology(models.Model):
 
 class Laboratory(models.Model):
     name = models.CharField(max_length=50, default='Laboratory')
-    description = models.CharField(max_length=500, default='Description')
+    description = models.TextField(max_length=500, default='Description')
     link = models.URLField()
 
     def __str__(self):
@@ -55,7 +55,7 @@ class Laboratory(models.Model):
 
 class New(models.Model):
     name = models.CharField(max_length=50, default='New')
-    description = models.CharField(max_length=500, default='Description')
+    description = models.TextField(max_length=500, default='Description')
     link = models.URLField()
 
     def __str__(self):
@@ -63,10 +63,10 @@ class New(models.Model):
 
 
 class Post(models.Model):
-    author = models.CharField(max_length=50, default='Author')
+    author = models.CharField(max_length=50, default='')
     date = models.DateTimeField(default=timezone.now)
-    title = models.CharField(max_length=50, default='Title')
-    description = models.CharField(max_length=500, default='Description')
+    title = models.CharField(max_length=50, default='')
+    description = models.TextField(max_length=500, default='')
 
     def __str__(self):
         return f"{self.date} | {self.author} | {self.description}"

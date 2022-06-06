@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from portfolio.forms import PostForm
 from .models import Contact, Laboratory, New, Post, Project, Subject, WebTechnology
 
 
@@ -39,22 +41,36 @@ def web_programming_view(request):
         'technologies': technologies,
         'laboratories': laboratories,
         'news': news
-
     }
 
     return render(request, 'portfolio/web-programming.html', context)
 
 
 def blog_view(request):
+    form = PostForm(request.POST or None)
+
+    duplicate = False
+
+    if form.is_valid():
+        for post in Post.objects.all():
+            if post.description == form.instance.description:
+                duplicate = True
+
+        if not duplicate:
+            form.save()
+
+    form = PostForm()
+
     posts = Post.objects.all()
 
     posts = sorted(posts, key=lambda p: p.date, reverse=True)
 
-    return render(request, 'portfolio/blog.html', {'posts': posts})
+    context = {
+        'form': form,
+        'posts': posts
+    }
 
-
-def about_website_view(request):
-    return render(request, 'portfolio/about-website.html')
+    return render(request, 'portfolio/blog.html', context)
 
 
 def contact_view(request):

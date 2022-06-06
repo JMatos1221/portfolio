@@ -1,15 +1,30 @@
 {% extends 'portfolio/layout.html' %} {% block head %} {% load static %}
 <link rel="stylesheet" href="{% static 'portfolio/css/blog.css' %}" />
-{% endblock head %} {% block main %} {% for p in posts%}
+{% endblock head %} {% block main %}
 
-<p>{{p.description}}</p>
-
-{% endfor %}
-
-<div class="post-form">
-  <input type="text" name="author" />
-  <input type="text" name="title" />
-  <textarea name="description" cols="30" rows="10"></textarea>
-  <button type="submit">Submit</button>
+<div class="title">
+  <h1>Blog</h1>
 </div>
+
+<div class="posts">
+  {% for p in posts %}
+
+  <div class="post">
+    <h1>{{ p.title }}</h1>
+    <p>{{ p.description }}</p>
+    <h3>{{ p.author }}</h3>
+    <h4>{{ p.date }}</h4>
+  </div>
+
+  {% endfor %}
+</div>
+
+<div class="form">
+  <form action="" method="POST">
+    {% csrf_token %} {{ form.as_p }}
+
+    <button type="submit">Post</button>
+  </form>
+</div>
+
 {% endblock %}

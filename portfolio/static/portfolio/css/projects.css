@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   margin-left: 10%;
   margin-right: 10%;
+  margin-bottom: 32px;
   gap: 32px;
 }
 
@@ -96,4 +97,41 @@
   height: inherit;
   border-radius: 16px;
   box-shadow: 0px 0px 5px gray;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+}
+
+.form form label {
+  display: inline-block;
+  width: 13ch;
+}
+
+.form form input,
+.form form textarea {
+  width: 50ch;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0px 0px 5px gray;
+}
+
+.form * {
+  vertical-align: top;
+}
+
+.form button {
+  margin-left: 53ch;
+  width: 13ch;
+  height: 4ch;
+  border: none;
+  box-shadow: 0px 0px 5px gray;
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
 }

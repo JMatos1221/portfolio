@@ -17,47 +17,46 @@ class Subject(models.Model):
 
 
 class Person(models.Model):
-    name = models.CharField(max_length=50)
-    linkedin_url = models.CharField(max_length=100)
+    name = models.CharField(max_length=50, default='')
+    linkedin_url = models.URLField(max_length=256, default='')
 
     def __str__(self):
         return self.name
 
 
 class Project(models.Model):
-    name = models.CharField(max_length=50, default='Name')
-    description = models.TextField(max_length=500, default='Description')
+    name = models.CharField(max_length=50, default='')
+    description = models.TextField(max_length=500, default='')
     year = models.IntegerField(default=2019)
-    trailer_url = models.URLField(default='http://youtube.com/')
-    thumbnail = models.ImageField(
-        upload_to="projects/", default="projects/default.png")
+    trailer_url = models.URLField(max_length=256, default='')
+    thumbnail = models.ImageField(upload_to="projects/", blank=True)
 
     def __str__(self):
         return self.name
 
 
 class WebTechnology(models.Model):
-    name = models.CharField(max_length=50, default='HTML')
-    description = models.TextField(max_length=500, default='Description')
-    link = models.URLField(default='https://wikipedia.org')
+    name = models.CharField(max_length=50, default='')
+    description = models.TextField(max_length=500, default='')
+    link = models.URLField(max_length=256, default='')
 
     def __str__(self):
         return self.name
 
 
 class Laboratory(models.Model):
-    name = models.CharField(max_length=50, default='Laboratory')
-    description = models.TextField(max_length=500, default='Description')
-    link = models.URLField()
+    name = models.CharField(max_length=50, default='')
+    description = models.TextField(max_length=500, default='')
+    link = models.URLField(max_length=256, default='')
 
     def __str__(self):
         return self.name
 
 
 class New(models.Model):
-    name = models.CharField(max_length=50, default='New')
-    description = models.TextField(max_length=500, default='Description')
-    link = models.URLField()
+    name = models.CharField(max_length=50, default='')
+    description = models.TextField(max_length=500, default='')
+    link = models.URLField(max_length=256, default='')
 
     def __str__(self):
         return self.name
@@ -74,8 +73,8 @@ class Post(models.Model):
 
 
 class Contact(models.Model):
-    name = models.CharField(max_length=50, default='Name')
-    link = models.URLField()
+    name = models.CharField(max_length=50, default='')
+    link = models.URLField(max_length=256, default='')
 
     def __str__(self):
         return self.name
@@ -87,10 +86,9 @@ class TFC(models.Model):
     advisor = models.CharField(max_length=50, default='')
     resume = models.TextField(max_length=500, default='')
     github_link = models.URLField(max_length=256, default='')
-    youtube_link = models.URLField(
-        max_length=256, default='')
+    youtube_link = models.URLField(max_length=256, default='')
     report_link = models.URLField(max_length=256, default='')
-    image = models.FileField(upload_to="tfc/images/", blank=True)
+    image = models.ImageField(upload_to="tfc/images/", blank=True)
 
     def __str__(self):
         return f"{self.author} - {self.title}"

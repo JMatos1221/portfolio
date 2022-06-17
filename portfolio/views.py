@@ -1,5 +1,4 @@
-from django.shortcuts import redirect, render
-
+from django.shortcuts import render
 from portfolio.forms import PostForm, TFCForm
 from .models import TFC, Contact, Laboratory, New, Post, Project, Subject, WebTechnology
 

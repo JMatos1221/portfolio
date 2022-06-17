@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
-from portfolio.forms import PostForm
-from .models import Contact, Laboratory, New, Post, Project, Subject, WebTechnology
+from portfolio.forms import PostForm, TFCForm
+from .models import TFC, Contact, Laboratory, New, Post, Project, Subject, WebTechnology
 
 
 def home_view(request):
@@ -17,24 +17,43 @@ def about_view(request):
 
 
 def projects_view(request):
+    if request.method == 'POST':
+        form = TFCForm(request.POST or None, request.FILES)
+
+        duplicate = False
+
+        if form.is_valid():
+            for tfc in TFC.objects.all():
+                if tfc.title == form.instance.title:
+                    duplicate = True
+
+            if not duplicate:
+                form.save()
+
+    form = TFCForm()
+
     projects = Project.objects.all()
+    tfc = TFC.objects.all()
 
     projects = sorted(projects, key=lambda p: (p.year, p.name))
+    tfc = sorted(tfc, key=lambda t: (t.title, t.author))
 
-    return render(request, 'portfolio/projects.html', {'projects': projects})
+    context = {
+        'projects': projects,
+        'tfc': tfc,
+        'form': form
+    }
+
+    return render(request, 'portfolio/projects.html', context)
 
 
 def web_programming_view(request):
     technologies = WebTechnology.objects.all()
-
-    technologies = sorted(technologies, key=lambda t: t.name)
-
     laboratories = Laboratory.objects.all()
-
-    laboratories = sorted(laboratories, key=lambda t: t.name)
-
     news = New.objects.all()
 
+    technologies = sorted(technologies, key=lambda t: t.name)
+    laboratories = sorted(laboratories, key=lambda t: t.name)
     news = sorted(news, key=lambda n: n.name)
 
     context = {
@@ -47,17 +66,18 @@ def web_programming_view(request):
 
 
 def blog_view(request):
-    form = PostForm(request.POST or None)
+    if request.method == 'POST':
+        form = PostForm(request.POST or None)
 
-    duplicate = False
+        duplicate = False
 
-    if form.is_valid():
-        for post in Post.objects.all():
-            if post.description == form.instance.description:
-                duplicate = True
+        if form.is_valid():
+            for post in Post.objects.all():
+                if post.description == form.instance.description:
+                    duplicate = True
 
-        if not duplicate:
-            form.save()
+            if not duplicate:
+                form.save()
 
     form = PostForm()
 

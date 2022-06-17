@@ -1,14 +1,14 @@
 {% extends 'portfolio/layout.html' %} {% block head %} {% load static %}
 <link rel="stylesheet" href="{% static 'portfolio/css/projects.css' %}" />
-{% endblock head %} {% block main %} {% if projects|length > 0 %}
+{% endblock head %} {% block main %}
+
 <div class="title">
+  {% if projects|length > 0 %}
   <h1>Projects</h1>
-</div>
-{% else %}
-<div class="title">
+  {% else %}
   <h1>No projects found :(</h1>
+  {% endif %}
 </div>
-{% endif %}
 <div class="projects">
   {% for p in projects %}
   <a href="{{p.trailer_url}}" target="_blank">
@@ -23,6 +23,46 @@
     </div>
   </a>
   {% endfor %}
+</div>
+
+<div class="title">
+  {% if tfc|length > 0 %}
+  <h1>TFC</h1>
+  {% endif %}
+</div>
+
+<div class="projects">
+  {% for t in tfc %}
+  <div class="tfc">
+    <div
+      class="project-background"
+      style="background-image:url({{t.image.url}})"
+    ></div>
+    <h2>{{t.title}}</h2>
+    <h3>{{t.author}}</h3>
+    <h4>{{t.advisor}}</h4>
+    <p>{{t.resume}}</p>
+    <div class="buttons">
+      <a href="{{t.github_link}}" target="_blank">
+        <div class="button github">Github</div>
+      </a>
+      <a href="{{t.report}}" target="_blank">
+        <div class="button report">Report</div>
+      </a>
+      <a href="{{t.youtube_link}}" target="_blank">
+        <div class="button youtube">Youtube</div>
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="form">
+  <form action="" method="POST">
+    {% csrf_token %} {{ form.as_p }}
+
+    <button type="submit">Post</button>
+  </form>
 </div>
 
 {% endblock %}

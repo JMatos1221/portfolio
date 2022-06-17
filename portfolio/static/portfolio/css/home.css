@@ -6,8 +6,25 @@
 }
 
 .hero-image img {
+  position: relative;
   width: auto;
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.text{
+  color: gray;
+}
+
+.left-text{
+position: absolute;  
+left: 128px;
+top: 33%;
+}
+
+.right-text{
+  position: absolute;  
+  right: 128px;
+  top: 66%;
 }

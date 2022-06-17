@@ -1,3 +1,4 @@
+from tokenize import blank_re
 from django.db import models
 from django.utils import timezone
 
@@ -78,3 +79,18 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class TFC(models.Model):
+    title = models.CharField(max_length=50, default='')
+    author = models.CharField(max_length=50, default='')
+    advisor = models.CharField(max_length=50, default='')
+    resume = models.TextField(max_length=500, default='')
+    github_link = models.URLField(max_length=256, default='')
+    youtube_link = models.URLField(
+        max_length=256, default='')
+    report_link = models.URLField(max_length=256, default='')
+    image = models.FileField(upload_to="tfc/images/", blank=True)
+
+    def __str__(self):
+        return f"{self.author} - {self.title}"

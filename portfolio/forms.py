@@ -39,4 +39,6 @@ class TFCForm(ModelForm):
             'github_link': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Github Link'}),
             'youtube_link': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Youtube Link'}),
             'report_link': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Report Link'}),
+            'image': forms.FileInput(attrs={'class': 'form-control', 'accept': 'image/*'}),
+
         }

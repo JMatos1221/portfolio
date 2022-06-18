@@ -108,14 +108,16 @@
 #github-repos {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 32px;
   margin-left: 10%;
   margin-right: 10%;
 }
 
-.meteorology-day {
+.meteorology-day,
+.github-repo {
+  width: 300px;
   background: white;
   border-radius: 16px;
   box-shadow: 0px 0px 5px gray;
@@ -124,9 +126,31 @@
 
 .meteorology-day:first-child {
   box-shadow: 0px 0px 15px cornflowerblue;
+  margin-left: calc(50% - 150px);
+  margin-right: calc(50% - 150px);
 }
 
-.meteorology-day h2 {
+.meteorology-day h2,
+.github-repo h2 {
   margin-bottom: 16px;
   text-align: center;
+}
+
+#github-repos a {
+  text-decoration: none;
+  color: black;
+}
+
+.github-repo {
+  width: 400px;
+  min-height: 100px;
+}
+
+.github-repo h2 {
+  margin-bottom: 8px;
+}
+
+.github-repo h4,
+.github-repo p:last-of-type {
+  margin-top: 16px;
 }

@@ -40,6 +40,39 @@ window.addEventListener("load", () => {
   fetch("https://api.github.com/users/JMatos1221/repos")
     .then((response) => response.json())
     .then((data) => {
+      data = data.sort((r) => r.updated_at);
+
       let githubRepos = document.getElementById("github-repos");
+
+      for (const repo of data) {
+        let repoAnchorEl = document.createElement("a");
+
+        let githubRepoEl = document.createElement("div");
+        githubRepoEl.classList.add("github-repo");
+
+        let repoNameEl = document.createElement("h2");
+        let descriptionEl = document.createElement("p");
+        let languageEl = document.createElement("p");
+        let createdAtEl = document.createElement("h4");
+
+        repoAnchorEl.appendChild(githubRepoEl);
+
+        githubRepoEl.appendChild(repoNameEl);
+        githubRepoEl.appendChild(descriptionEl);
+        githubRepoEl.appendChild(languageEl);
+        githubRepoEl.appendChild(createdAtEl);
+
+        repoAnchorEl.href = repo.html_url;
+        repoAnchorEl.setAttribute("target", "_blank");
+
+        let creationYear = repo.created_at.split("-")[0];
+
+        repoNameEl.innerHTML = repo.name;
+        descriptionEl.innerHTML = repo.description;
+        languageEl.innerHTML = `Language: ${repo.language}`;
+        createdAtEl.innerHTML = creationYear;
+
+        githubRepos.appendChild(repoAnchorEl);
+      }
     });
 });

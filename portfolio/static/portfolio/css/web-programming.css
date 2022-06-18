@@ -1,14 +1,20 @@
 .technologies,
 .used-technologies,
 .used-patterns,
-.laboratories {
+.laboratories,
+#meteorology,
+#github-repos {
   display: flex;
-  align-content: center;
+  align-content: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-left: 10%;
   margin-right: 10%;
   gap: 32px;
+}
+
+p {
+  color: gray;
 }
 
 .news {
@@ -24,31 +30,35 @@
 .laboratory,
 .used-technology,
 .pattern,
-.new {
+.new,
+.github-repo {
   padding: 16px;
   width: 300px;
   height: 100%;
   background: white;
   border-radius: 16px;
   box-shadow: 0px 0px 5px gray;
-  color: gray;
   transition: box-shadow 0.25s;
 }
 
 .technology:hover,
 .laboratory:hover,
-.new:hover {
+.new:hover,
+.github-repo:hover {
   box-shadow: 0px 0px 15px gray;
 }
 
 .technology h4,
-.laboratory h4 {
+.laboratory h4,
+.new h4 {
   color: black;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .technologies a,
-.laboratories a {
+.laboratories a,
+.news a,
+#github-repos a {
   text-decoration: none;
 }
 
@@ -58,7 +68,8 @@
 }
 
 .pattern,
-.used-technology {
+.used-technology,
+#github-repos a {
   color: black;
 }
 
@@ -67,13 +78,7 @@
   text-align: center;
 }
 
-.new h4 {
-  color: black;
-  margin-bottom: 16px;
-}
-
 .new p {
-  color: gray;
   margin-bottom: 16px;
 }
 
@@ -83,10 +88,6 @@
   border-radius: 16px;
   object-fit: cover;
   object-position: center;
-}
-
-.news a {
-  text-decoration: none;
 }
 
 .diagram {
@@ -102,17 +103,6 @@
   width: inherit;
   height: inherit;
   object-fit: contain;
-}
-
-#meteorology,
-#github-repos {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 32px;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .meteorology-day,
@@ -136,12 +126,9 @@
   text-align: center;
 }
 
-#github-repos a {
-  text-decoration: none;
-  color: black;
-}
-
 .github-repo {
+  display: flex;
+  flex-direction: column;
   width: 400px;
   min-height: 100px;
 }
@@ -150,7 +137,11 @@
   margin-bottom: 8px;
 }
 
-.github-repo h4,
 .github-repo p:last-of-type {
   margin-top: 16px;
+  color: black;
+}
+.github-repo h4 {
+  padding-top: 16px;
+  margin-top: auto;
 }

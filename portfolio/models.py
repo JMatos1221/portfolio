@@ -76,6 +76,7 @@ class Post(models.Model):
 class Contact(models.Model):
     name = models.CharField(max_length=50, default='')
     link = models.URLField(max_length=256, default='')
+    image = models.ImageField(upload_to='contacts/', blank=True)
 
     def __str__(self):
         return self.name

@@ -10,7 +10,7 @@
   {% for c in contacts %}
 
   <a href="{{c.link}}" target="_blank">
-    <div class="contact">
+    <div class="contact" style="background-image:url({{c.image.url}}) ;">
       <h2>{{c.name}}</h2>
     </div>
   </a>

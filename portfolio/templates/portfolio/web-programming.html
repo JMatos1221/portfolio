@@ -3,6 +3,11 @@
   rel="stylesheet"
   href="{% static 'portfolio/css/web-programming.css' %}"
 />
+{% load static %}
+<script
+  type="text/javascript"
+  src="{% static 'portfolio/javascript/web-programming.js' %}"
+></script>
 {% endblock head %} {% block main %} {% if technologies|length > 0 %}
 <div class="title">
   <h1>Web Programming Technologies</h1>
@@ -19,51 +24,6 @@
   </a>
 
   {% endfor %}
-</div>
-
-{% if laboratories|length > 0 %}
-<div class="title">
-  <h1>Laboratories</h1>
-</div>
-{% endif %}
-
-<div class="laboratories">
-  {% for l in laboratories %}
-  <a href="{{l.link}}">
-    <div class="laboratory">
-      <h4>{{l.name}}</h4>
-      <p>{{l.description}}</p>
-    </div>
-  </a>
-
-  {% endfor %}
-</div>
-
-{% if news|length > 0 %}
-<div class="title">
-  <h1>News</h1>
-</div>
-{% endif %}
-
-<div class="news">
-  {% for n in news %}
-  <a href="{{n.link}}">
-    <div class="new">
-      <h4>{{n.name}}</h4>
-      <p>{{n.description}}</p>
-    </div>
-  </a>
-
-  {% endfor %}
-</div>
-
-<div class="title">
-  <h1>DER Diagram</h1>
-</div>
-
-<div class="diagram">
-  {% load static %}
-  <img src="{% static 'portfolio/images/DER_Diagram.png' %}" />
 </div>
 
 <div class="title">
@@ -98,5 +58,63 @@
     <h4>Single Responsibility</h4>
   </div>
 </div>
+
+<div class="title">
+  <h1>DER Diagram</h1>
+</div>
+
+<div class="diagram">
+  {% load static %}
+  <img src="{% static 'portfolio/images/DER_Diagram.png' %}" />
+</div>
+
+{% if laboratories|length > 0 %}
+<div class="title">
+  <h1>Laboratories</h1>
+</div>
+{% endif %}
+
+<div class="laboratories">
+  {% for l in laboratories %}
+  <a href="{{l.link}}">
+    <div class="laboratory">
+      <h4>{{l.name}}</h4>
+      <p>{{l.description}}</p>
+    </div>
+  </a>
+
+  {% endfor %}
+</div>
+
+{% if news|length > 0 %}
+<div class="title">
+  <h1>News</h1>
+</div>
+{% endif %}
+
+<div class="news">
+  {% for n in news %}
+  <a href="{{n.link}}">
+    <div class="new">
+      <h4>{{n.name}}</h4>
+      <p>{{n.description}}</p>
+      <img src="{{n.image.url}}" alt="New Image" />
+    </div>
+  </a>
+
+  {% endfor %}
+</div>
+
+<div class="title">
+  <h1>Meteorology</h1>
+</div>
+
+<div id="meteorology"></div>
+
+<div class="title">
+  <h1>Github Repositories</h1>
+</div>
+
+<div id="github-repos"></div>
 
 {% endblock %}

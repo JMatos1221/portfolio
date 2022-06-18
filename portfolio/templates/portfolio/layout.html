@@ -1,40 +1,45 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="author" content="João Matos">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}">
-    {% if debug %}
-    <script type="text/javascript" src="http://livejs.com/live.js"></script>
-    {% endif %}
-    <title>João Matos | Portfolio</title>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="author" content="João Matos" />
+  <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}" />
+  {% if debug %}
+  <script type="text/javascript" src="http://livejs.com/live.js"></script>
+  {% endif %}
+  <script
+    type="text/javascript"
+    src="{% static 'portfolio/javascript/scripts.js' %}"
+  ></script>
 
-    {% block head %}
-    {% endblock head %}
+  {% block head %} {% endblock head %}
 </head>
 
 <body>
-    <header>
-        <div><a href="{% url 'portfolio:home' %}">João Matos</a></div>
-        <nav>
-            <a href="{% url 'portfolio:home' %}">Home</a>
-            <a href="{% url 'portfolio:about' %}">About</a>
-            <a href="{% url 'portfolio:projects' %}">Projects</a>
-            <a href="{% url 'portfolio:web-programming' %}">Web Programming</a>
-            <a href="{% url 'portfolio:blog' %}">Blog</a>
-            <a href="{% url 'portfolio:contact' %}">Contacts</a>
-        </nav>
-    </header>
+  <header>
+    <div><a href="{% url 'portfolio:home' %}">João Matos</a></div>
+    <nav>
+      <a href="{% url 'portfolio:home' %}">Home</a>
+      <a href="{% url 'portfolio:about' %}">About</a>
+      <a href="{% url 'portfolio:projects' %}">Projects</a>
+      <a href="{% url 'portfolio:web-programming' %}">Web Programming</a>
+      <a href="{% url 'portfolio:blog' %}">Blog</a>
+      <a href="{% url 'portfolio:contact' %}">Contacts</a>
+    </nav>
+  </header>
 
-    <main>
-        {% block main %}
-        {% endblock main %}
-    </main>
+  <main>{% block main %} {% endblock main %}</main>
 
-    <footer>
-        <p>
-            João Matos, <a href="mailto:joao.matos1221@gmail.com">joao.matos1221@gmail.com</a>, <a href="https://www.ulusofona.pt/" target="_blank">Universidade
-                Lusófona de Humanidades e Tecnologias</a>, 2022
-        </p>
-
-    </footer>
+  <footer>
+    <div id="clock"></div>
+    <div class="info">
+      <p>
+        João Matos,
+        <a href="mailto:joao.matos1221@gmail.com">joao.matos1221@gmail.com</a>,
+        <a href="https://www.ulusofona.pt/" target="_blank"
+          >Universidade Lusófona de Humanidades e Tecnologias</a
+        >, 2022
+      </p>
+    </div>
+  </footer>
+</body>

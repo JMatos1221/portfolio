@@ -69,10 +69,20 @@
 
 .new h4 {
   color: black;
+  margin-bottom: 16px;
 }
 
 .new p {
   color: gray;
+  margin-bottom: 16px;
+}
+
+.new img {
+  width: inherit;
+  max-height: 512px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .news a {
@@ -92,4 +102,31 @@
   width: inherit;
   height: inherit;
   object-fit: contain;
+}
+
+#meteorology,
+#github-repos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.meteorology-day {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0px 0px 5px gray;
+  padding: 16px;
+}
+
+.meteorology-day:first-child {
+  box-shadow: 0px 0px 15px cornflowerblue;
+}
+
+.meteorology-day h2 {
+  margin-bottom: 16px;
+  text-align: center;
 }

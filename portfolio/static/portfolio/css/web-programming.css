@@ -23,7 +23,6 @@ p {
   flex-wrap: wrap;
   margin-left: 10%;
   margin-right: 10%;
-  gap: 16px;
 }
 
 .technology,
@@ -84,7 +83,7 @@ p {
 }
 
 .new img {
-  width: inherit;
+  width: 100%;
   max-height: 512px;
   border-radius: 16px;
   object-fit: cover;
@@ -102,7 +101,7 @@ p {
 
 .diagram img {
   width: inherit;
-  height: inherit;
+  max-height: 512px;
   object-fit: contain;
 }
 

@@ -23,6 +23,7 @@ p {
   flex-wrap: wrap;
   margin-left: 10%;
   margin-right: 10%;
+  gap: 16px;
 }
 
 .technology,

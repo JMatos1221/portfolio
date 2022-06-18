@@ -75,6 +75,7 @@ p {
 
 .new {
   width: 100%;
+  height: 100%;
   text-align: center;
 }
 
@@ -107,8 +108,8 @@ p {
 
 .meteorology-day,
 .github-repo {
-  width: 300px;
   background: white;
+  width: 300px;
   border-radius: 16px;
   box-shadow: 0px 0px 5px gray;
   padding: 16px;
@@ -141,6 +142,7 @@ p {
   margin-top: 16px;
   color: black;
 }
+
 .github-repo h4 {
   padding-top: 16px;
   margin-top: auto;

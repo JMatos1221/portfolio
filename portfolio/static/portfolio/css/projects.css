@@ -3,10 +3,10 @@
   align-content: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 32px;
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 32px;
-  gap: 32px;
 }
 
 .project,
@@ -17,7 +17,6 @@
   padding: 16px;
   width: 400px;
   min-height: 400px;
-  height: 100%;
   background: white;
   border-radius: 16px;
   box-shadow: 0px 0px 15px gray;
@@ -34,8 +33,8 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   opacity: 0.5;
   background-size: cover;
   background-position: center;
@@ -73,6 +72,15 @@
 .tfc h4,
 .tfc p {
   pointer-events: none;
+}
+
+.tfc p:last-of-type {
+  text-shadow: 0px 0px 10px lightgray;
+  margin-bottom: 16px;
+}
+
+.tfc p:last-of-type::after {
+  content: "...";
 }
 
 .tfc a {

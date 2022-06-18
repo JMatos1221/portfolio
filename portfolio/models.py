@@ -57,6 +57,7 @@ class New(models.Model):
     name = models.CharField(max_length=50, default='')
     description = models.TextField(max_length=500, default='')
     link = models.URLField(max_length=256, default='')
+    image = models.ImageField(upload_to="news/", blank=True)
 
     def __str__(self):
         return self.name
@@ -88,7 +89,7 @@ class TFC(models.Model):
     github_link = models.URLField(max_length=256, default='')
     youtube_link = models.URLField(max_length=256, default='')
     report_link = models.URLField(max_length=256, default='')
-    image = models.ImageField(upload_to="tfc/images/", blank=True)
+    image = models.ImageField(upload_to="tfc/", blank=True)
 
     def __str__(self):
         return f"{self.author} - {self.title}"

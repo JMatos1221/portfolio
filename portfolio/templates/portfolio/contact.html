@@ -1,5 +1,11 @@
 {% extends 'portfolio/layout.html' %} {% block head %} {% load static %}
 <link rel="stylesheet" href="{% static 'portfolio/css/contact.css' %}" />
+
+<style>
+  .contact.email {
+    background-image: url("{% static 'portfolio/images/email.png' %}");
+  }
+</style>
 {% endblock head %} {% block main %}
 
 <div class="title">
@@ -18,7 +24,7 @@
   {% endfor %}
 
   <a href="mailto:joao.matos1221@gmail.com">
-    <div class="contact">
+    <div class="contact email">
       <h2>Email</h2>
     </div>
   </a>
